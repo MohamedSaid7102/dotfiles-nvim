@@ -55,4 +55,14 @@ packer.startup(function(use)
 
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+
+
+  -- ThePrimeagen File navigator (Harpoon): https://github.com/ThePrimeagen/harpoon
+  use('theprimeagen/harpoon')
+
+  -- UndoTree to track changes and comeback to some of them: https://github.com/mbbill/undotree
+  use('mbbill/undotree')
+
+  -- Fugitive to manipulate git: https://github.com/tpope/vim-fugitive
+  use('tpope/vim-fugitive')
 end)
