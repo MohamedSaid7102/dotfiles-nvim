@@ -50,5 +50,9 @@ packer.startup(function(use)
 
   use 'glepnir/lspsaga.nvim' -- LSP UIs
 
+  use 'dinhhuy258/git.nvim' -- For git blam & browse
   use 'lewis6991/gitsigns.nvim'
+
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 end)
