@@ -65,4 +65,7 @@ packer.startup(function(use)
 
   -- Fugitive to manipulate git: https://github.com/tpope/vim-fugitive
   use('tpope/vim-fugitive')
+
+  -- https://github.com/terrortylor/nvim-comment
+  use "terrortylor/nvim-comment"
 end)

@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-comment"] = {
+    loaded = true,
+    path = "/home/shelf/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
