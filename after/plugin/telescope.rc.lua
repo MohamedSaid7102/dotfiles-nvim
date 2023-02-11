@@ -26,17 +26,20 @@ telescope.setup {
                 -- your custom insert mode mappings
                 ["i"] = {
                     ["<C-w>"] = function() vim.cmd('normal vbd') end,
+                    ["<C-u>"] = false,
                 },
                 ["n"] = {
                     -- your custom normal mode mappings
-                    ["N"] = fb_actions.create,
+                    ["n"] = fb_actions.create,
+                    ["x"] = fb_actions.remove,
                     ["h"] = fb_actions.goto_parent_dir,
+                    --["l"] = fb_actions.goto_dir,
                     ["/"] = function()
                       vim.cmd('startinsert')
                     end
                 },
             },
-        },
+        }
     },
 }
 
