@@ -65,6 +65,7 @@ vim.keymap.set("n", "Y", "\"+y$")
 vim.keymap.set("v", "y", "\"+y")
 
 vim.keymap.set("n", "yi{", "\"+yi{")
+vim.keymap.set("n", "yit", "\"+yit")
 vim.keymap.set("n", "yiw", "\"+yiw")
 vim.keymap.set("n", "yi<", "\"+yi<")
 vim.keymap.set("n", "yi(", "\"+yi(")

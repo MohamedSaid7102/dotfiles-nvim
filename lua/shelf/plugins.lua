@@ -21,6 +21,7 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'neovim/nvim-lspconfig' -- LSP
+
   --use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   --use 'MunifTanjim/prettier.nvim' --Prettier plugin for Neovim's built-in
 
@@ -56,7 +57,6 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
-
   -- ThePrimeagen File navigator (Harpoon): https://github.com/ThePrimeagen/harpoon
   use('theprimeagen/harpoon')
 
@@ -66,6 +66,42 @@ packer.startup(function(use)
   -- Fugitive to manipulate git: https://github.com/tpope/vim-fugitive
   use('tpope/vim-fugitive')
 
-  -- https://github.com/terrortylor/nvim-comment
+  -- Comment code: https://github.com/terrortylor/nvim-comment
   use "terrortylor/nvim-comment"
+
+  -- Auto save: https://github.com/Pocco81/auto-save.nvim
+  -- Enable & Disable => :ASToggle<CR>
+  use({
+      "Pocco81/auto-save.nvim",
+      config = function()
+        require("auto-save").setup {
+            trigger_events = { "InsertLeave" --[[ "TextChanged"]] },
+            enabled = true,
+            write_all_buffers = true,
+            debounce_delay = 500,
+        }
+      end,
+  })
+
+  -- Copilot: https://github.com/github/copilot.vim.git
+
+
+  use {
+      "folke/zen-mode.nvim",
+      config = function()
+        require("zen-mode").setup {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+      end
+  }
+
+  -- Emmet: https://github.com/mattn/emmet-vim
+  -- use('mattn/emmet-vim')
+  --
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
+
+  use 'mattn/emmet-vim'
 end)
