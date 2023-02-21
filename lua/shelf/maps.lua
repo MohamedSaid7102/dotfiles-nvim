@@ -32,6 +32,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace current word in all the file
+vim.keymap.set("n", "<C-\\>", [[:exe "!"<Left>]]) -- Replace current word in all the file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- Make current file excutable
 
 vim.keymap.set("n", "<C-b>", "<cmd>:NvimTreeToggle<CR>")
@@ -64,6 +65,7 @@ vim.keymap.set("n", "Y", "\"+y$")
 
 vim.keymap.set("v", "y", "\"+y")
 
+-- Yank to system clipboard "in"
 vim.keymap.set("n", "yi{", "\"+yi{")
 vim.keymap.set("n", "yit", "\"+yit")
 vim.keymap.set("n", "yiw", "\"+yiw")
@@ -71,14 +73,18 @@ vim.keymap.set("n", "yi<", "\"+yi<")
 vim.keymap.set("n", "yi(", "\"+yi(")
 vim.keymap.set("n", "yi'", "\"+yi'")
 vim.keymap.set("n", "yi\"", "\"+yi\"")
+vim.keymap.set("n", "y$", "\"+y$")
+vim.keymap.set("n", "y0", "\"+y0")
+vim.keymap.set("n", "y^", "\"+y^")
 
 -- Folding
 vim.keymap.set("n", "<C-]>", "zfa}")
 vim.keymap.set("n", "<C-[>", "zo")
 
 -- Select all
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
-vim.keymap.set("v", "<C-a>", "gg<S-v>G")
+vim.keymap.set("n", "<A-a>", "gg<S-v>G")
+vim.keymap.set("v", "<A-a>", "gg<S-v>G")
+
 
 -- Spliting
 -- vim.keymap.set("n", "sv", ":vsplit<CR>")
@@ -101,3 +107,15 @@ vim.keymap.set('n', '<C-left>', '<C-w>5>')
 vim.keymap.set('n', '<C-right>', '<C-w>5<')
 vim.keymap.set('n', '<C-up>', '<C-w>5+')
 vim.keymap.set('n', '<C-down>', '<C-w>5-')
+
+vim.keymap.set('n', '<Tab>', '>>_')
+vim.keymap.set('n', '<S-Tab>', '<<_')
+vim.keymap.set('v', '<Tab>', '>gv')
+vim.keymap.set('v', '<S-Tab>', '<gv')
+
+-- Word wrap toggle
+vim.keymap.set('n', '<A-z>', ':set wrap!<CR>')
+
+-- Codi
+vim.keymap.set('n', '<leader>ca', ':Codi<CR>')
+vim.keymap.set('n', '<leader>cd', ':Codi!<CR>')

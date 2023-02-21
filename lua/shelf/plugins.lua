@@ -10,8 +10,8 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Theme | You can pick any one you want
   use {
-      'svrana/neosolarized.nvim',
-      requires = { 'tjdevries/colorbuddy.nvim' }
+    'svrana/neosolarized.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' }
   }
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
@@ -26,15 +26,15 @@ packer.startup(function(use)
   --use 'MunifTanjim/prettier.nvim' --Prettier plugin for Neovim's built-in
 
   use({
-      "L3MON4D3/LuaSnip",
-      -- install jsregexp (optional!:).
-      run = "make install_jsregexp"
+    "L3MON4D3/LuaSnip",
+    -- install jsregexp (optional!:).
+    run = "make install_jsregexp"
   })
 
   use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-      --run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+    --run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
   use 'windwp/nvim-autopairs'
@@ -72,36 +72,44 @@ packer.startup(function(use)
   -- Auto save: https://github.com/Pocco81/auto-save.nvim
   -- Enable & Disable => :ASToggle<CR>
   use({
-      "Pocco81/auto-save.nvim",
-      config = function()
-        require("auto-save").setup {
-            trigger_events = { "InsertLeave" --[[ "TextChanged"]] },
-            enabled = true,
-            write_all_buffers = true,
-            debounce_delay = 500,
-        }
-      end,
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        trigger_events = { "InsertLeave" --[[ "TextChanged"]] },
+        enabled = true,
+        write_all_buffers = true,
+        debounce_delay = 500,
+      }
+    end,
   })
 
   -- Copilot: https://github.com/github/copilot.vim.git
 
 
   use {
-      "folke/zen-mode.nvim",
-      config = function()
-        require("zen-mode").setup {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
-      end
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
 
   -- Emmet: https://github.com/mattn/emmet-vim
-  -- use('mattn/emmet-vim')
-  --
+  use 'mattn/emmet-vim'
+
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
 
-  use 'mattn/emmet-vim'
+  -- https://www.youtube.com/shorts/bf5cS9M5m3c
+  use 'saadparwaiz1/cmp_luasnip' -- nvim-cmp source for luasnip snippets
+  use 'rafamadriz/friendly-snippets' -- Snippets'
+
+  -- live server: https://github.com/manzeloth/live-server
+  use 'manzeloth/live-server'
+
+  -- quacker like!, codei.vim: https://github.com/metakirby5/codi.vim
+  use 'metakirby5/codi.vim'
 end)

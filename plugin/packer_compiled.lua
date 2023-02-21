@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["auto-save.nvim"] = {
-    config = { "\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\22write_all_buffers\2\fenabled\2\19debounce_delay\3ô\3\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0" },
+    config = { "\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\19debounce_delay\3ô\3\22write_all_buffers\2\fenabled\2\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0" },
     loaded = true,
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
@@ -95,6 +95,16 @@ _G.packer_plugins = {
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/shelf/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["codi.vim"] = {
+    loaded = true,
+    path = "/home/shelf/.local/share/nvim/site/pack/packer/start/codi.vim",
+    url = "https://github.com/metakirby5/codi.vim"
+  },
   ["colorbuddy.nvim"] = {
     loaded = true,
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
@@ -104,6 +114,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/shelf/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["git.nvim"] = {
     loaded = true,
@@ -119,6 +134,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["live-server"] = {
+    loaded = true,
+    path = "/home/shelf/.local/share/nvim/site/pack/packer/start/live-server",
+    url = "https://github.com/manzeloth/live-server"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -246,7 +266,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
-try_loadstring("\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\22write_all_buffers\2\fenabled\2\19debounce_delay\3ô\3\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
+try_loadstring("\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\19debounce_delay\3ô\3\22write_all_buffers\2\fenabled\2\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
 time([[Config for auto-save.nvim]], false)
 -- Config for: zen-mode.nvim
 time([[Config for zen-mode.nvim]], true)
