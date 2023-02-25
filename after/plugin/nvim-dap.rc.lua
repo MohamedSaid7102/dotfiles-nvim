@@ -39,49 +39,7 @@ end
 -- nvim-dap-ui
 local dapui = require("dapui")
 
-dapui.setup({
-  icons = { expanded = "▾", collapsed = "▸" },
-  mappings = {
-    -- Use a table to apply multiple mappings
-    expand = { "<CR>", "<2-LeftMouse>" },
-    open = "o",
-    remove = "d",
-    edit = "e",
-    repl = "r",
-  },
-  sidebar = {
-    elements = {
-      -- You can change the order of elements in the sidebar
-      "scopes",
-      "breakpoints",
-      "stacks",
-      "watches"
-    },
-    width = 40,
-    position = "left" -- Can be "left" or "right"
-  },
-  tray = {
-    elements = { "repl" },
-    height = 10,
-    position = "bottom" -- Can be "bottom" or "top"
-  },
-  floating = {
-    max_height = nil, -- These can be integers or a float between 0 and 1.
-    max_width = nil, -- Floats will be treated as percentage of your screen.
-    mappings = {
-      close = { "q", "<Esc>" }
-    }
-  },
-  controls = {
-    -- You can remap the default controls in the order listed
-    up = { "k" },
-    down = { "j" },
-    open = { "o" },
-    remove = { "d" },
-    edit = { "e" },
-    repl = { "r" }
-  },
-})
+dapui.setup()
 -- Listen to dap events and open/close the UI accordingly
 dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
 dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
