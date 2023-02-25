@@ -23,22 +23,13 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "s", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format) -- Format code
-
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Replace current word in all the file
 vim.keymap.set("n", "<C-\\>", [[:exe "!"<Left>]]) -- Replace current word in all the file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- Make current file excutable
-
-vim.keymap.set("n", "<C-b>", "<cmd>:NvimTreeToggle<CR>")
-
--- Close current buffer
---vim.keymap.set("n", "<C-w>", "<cmd>:bdelete<CR>")
 
 -- Save current buffer
 vim.keymap.set("n", "<C-s>", "<cmd>:w<CR>", { silent = true })
@@ -51,8 +42,8 @@ vim.keymap.set("v", "x", "\"+dd") -- dd cut
 vim.keymap.set("v", "<leader>d", "dd") -- will cut
 
 -- bufferline mapgin
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>") -- Tab navigate to next tab
-vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>") -- Shift + Tab navigate to previous tab
+vim.keymap.set("n", "<S-k>", ":BufferLineCycleNext<CR>") -- Tab navigate to next tab
+vim.keymap.set("n", "<S-j>", ":BufferLineCyclePrev<CR>") -- Shift + Tab navigate to previous tab
 
 -- copy to global clipboard -- XClip
 vim.keymap.set("n", "p", "\"+p")
@@ -86,9 +77,6 @@ vim.keymap.set("n", "<A-a>", "gg<S-v>G")
 vim.keymap.set("v", "<A-a>", "gg<S-v>G")
 
 
--- Spliting
--- vim.keymap.set("n", "sv", ":vsplit<CR>")
--- vim.keymap.set("n", "sh", ":split<CR>")
 vim.keymap.set('n', "<C-c>", "<cmd>:q<CR>")
 -- New tab
 vim.keymap.set('n', 'te', ':tabedit<Return>')
@@ -108,10 +96,6 @@ vim.keymap.set('n', '<C-right>', '<C-w>5<')
 vim.keymap.set('n', '<C-up>', '<C-w>5+')
 vim.keymap.set('n', '<C-down>', '<C-w>5-')
 
-vim.keymap.set('n', '<Tab>', '>>_')
-vim.keymap.set('n', '<S-Tab>', '<<_')
-vim.keymap.set('v', '<Tab>', '>gv')
-vim.keymap.set('v', '<S-Tab>', '<gv')
 
 -- Word wrap toggle
 vim.keymap.set('n', '<A-z>', ':set wrap!<CR>')
@@ -119,3 +103,18 @@ vim.keymap.set('n', '<A-z>', ':set wrap!<CR>')
 -- Codi
 vim.keymap.set('n', '<leader>ca', ':Codi<CR>')
 vim.keymap.set('n', '<leader>cd', ':Codi!<CR>')
+
+
+-- Moving line below up without changing cursor position
+vim.keymap.set('n', '<S-u>', 'mzJ`z')
+
+
+-- You will find another maps in lua/lsp*
+
+
+
+-- Might be useful
+-- vim.keymap.set('n', '<Tab>', '>>_')
+-- vim.keymap.set('n', '<S-Tab>', '<<_')
+-- vim.keymap.set('v', '<Tab>', '>gv')
+-- vim.keymap.set('v', '<S-Tab>', '<gv')

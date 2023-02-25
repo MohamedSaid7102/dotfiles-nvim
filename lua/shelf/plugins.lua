@@ -112,4 +112,33 @@ packer.startup(function(use)
 
   -- quacker like!, codei.vim: https://github.com/metakirby5/codi.vim
   use 'metakirby5/codi.vim'
+
+  -- Dap: https://github.com/mfussenegger/nvim-dap
+  use { "mfussenegger/nvim-dap" }
+
+  -- Debugging UI: https://github.com/rcarriga/nvim-dap-ui
+  use { "rcarriga/nvim-dap-ui" }
+
+  -- Integration with telescope: https://github.com/nvim-telescope/telescope-dap.nvim
+  use { 'nvim-telescope/telescope-dap.nvim' }
+
+  -- makes it possible to have a lua file in base project to config how debugging will work..
+  use 'ldelossa/nvim-dap-projects'
+
+  -- Virtual text for DAP: https://github.com/theHamsta/nvim-dap-virtual-text
+  use { 'theHamsta/nvim-dap-virtual-text' }
+
+  -- Look at this in the future when you need becomer more productive!!
+  --
+  -- https://alpha2phi.medium.com/neovim-dap-enhanced-ebc730ff498b
+  --
+  -- Neotest: https://github.com/nvim-neotest/neotest
+  -- use {
+  --   "nvim-neotest/neotest",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "antoinemadec/FixCursorHold.nvim"
+  --   }
+  -- }
 end)
