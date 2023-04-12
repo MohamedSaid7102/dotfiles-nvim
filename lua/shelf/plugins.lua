@@ -15,15 +15,23 @@ packer.startup(function(use)
   }
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'nvim-lua/plenary.nvim' -- Common utilities
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
-  use 'neovim/nvim-lspconfig' -- LSP
+  use 'nvim-lua/plenary.nvim'     -- Common utilities
+  use 'onsails/lspkind-nvim'      -- vscode-like pictograms
+  use 'hrsh7th/cmp-buffer'        -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-nvim-lsp'      -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp'          -- Completion
+  use 'neovim/nvim-lspconfig'     -- LSP
 
   --use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   --use 'MunifTanjim/prettier.nvim' --Prettier plugin for Neovim's built-in
+
+  use {
+    "prettier/vim-prettier",
+    run = "npm install",
+    ft = { "javascript", "typescript", "json", "css", "scss", "less", "graphql", "markdown", "vue", "html", "yaml",
+      "svelte", "mdx" },
+    cmd = { "Prettier", "PrettierAsync" },
+  }
 
   use({
     "L3MON4D3/LuaSnip",
@@ -49,9 +57,9 @@ packer.startup(function(use)
 
   use 'norcalli/nvim-colorizer.lua' -- For colors hash color overlay
 
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use 'glepnir/lspsaga.nvim'        -- LSP UIs
 
-  use 'dinhhuy258/git.nvim' -- For git blam & browse
+  -- use 'dinhhuy258/git.nvim'         -- For git blam & browse
   use 'lewis6991/gitsigns.nvim'
 
   use 'williamboman/mason.nvim'
@@ -104,7 +112,7 @@ packer.startup(function(use)
   use 'hrsh7th/vim-vsnip-integ'
 
   -- https://www.youtube.com/shorts/bf5cS9M5m3c
-  use 'saadparwaiz1/cmp_luasnip' -- nvim-cmp source for luasnip snippets
+  use 'saadparwaiz1/cmp_luasnip'     -- nvim-cmp source for luasnip snippets
   use 'rafamadriz/friendly-snippets' -- Snippets'
 
   -- live server: https://github.com/manzeloth/live-server
@@ -128,6 +136,48 @@ packer.startup(function(use)
   -- Virtual text for DAP: https://github.com/theHamsta/nvim-dap-virtual-text
   use { 'theHamsta/nvim-dap-virtual-text' }
 
+  -- git diff: https://github.com/sindrets/diffview.nvim
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+  -- color picker: https://github.com/KabbAmine/vCoolor.vim
+  -- use 'KabbAmine/vCoolor.vim'
+
+  -- Vim surround
+  use 'tpope/vim-surround'
+
+  -- close tag auto rename: https://github.com/AndrewRadev/tagalong.vim
+  use 'AndrewRadev/tagalong.vim'
+
+  -- Match open and close tag:
+  use 'andymass/vim-matchup'
+  use 'gregsexton/MatchTag'
+  -- Auto close tag
+  use 'alvan/vim-closetag'
+
+  -- react & ract native snippets: https://github.com/ults-io/vscode-react-javascript-snippets
+  use { 'dsznajder/vscode-es7-javascript-react-snippets',
+    run = 'yarn install --frozen-lockfile && yarn compile'
+  }
+
+  -- Smooth scrolling
+  use 'karb94/neoscroll.nvim'
+
+  -- Dart & Flutter setup start
+  -- https://x-team.com/blog/neovim-flutter/
+  use 'dart-lang/dart-vim-plugin'
+  use 'thosakwe/vim-flutter'
+  use 'natebosch/vim-lsc'
+  use 'natebosch/vim-lsc-dart'
+  use 'natebosch/dartlang-snippets'
+
+
+  -- Telescope simulators: https://github.com/dimaportenko/telescope-simulators.nvim
+  use "dimaportenko/telescope-simulators.nvim"
+
+  -- Dart & Flutter setup end
+
+  -- Auto close tag
+  -- use 'alvan/vim-closetag'
   -- Look at this in the future when you need becomer more productive!!
   --
   -- https://alpha2phi.medium.com/neovim-dap-enhanced-ebc730ff498b

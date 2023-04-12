@@ -33,6 +33,14 @@ telescope.setup {
           ["n"] = fb_actions.create,
           ["x"] = fb_actions.remove,
           ["h"] = fb_actions.goto_parent_dir,
+          ["l"] = fb_actions.change_cwd,
+          ["."] = fb_actions.toggle_hidden,
+          ["a"] = fb_actions.select_all,
+          ["ua"] = fb_actions.toggle_all,
+          ["p"] = fb_actions.copy,
+          ["v"] = fb_actions.move,
+          ["sd"] = fb_actions.sort_by_date,
+          ["ss"] = fb_actions.sort_by_size,
           ["/"] = function()
             vim.cmd('startinsert')
           end
@@ -73,8 +81,8 @@ vim.keymap.set("n", "sf", function()
     respect_gitignore = false,
     hidden = true,
     grouped = true,
-    previewer = false,
+    previewer = true,
     initial_mode = "normal",
-    layout_config = { height = 40 }
+    layout_config = { height = 60 }
   })
 end)
