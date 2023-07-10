@@ -1,4 +1,4 @@
-vim.opt.nu = true -- Linenumbers
+vim.opt.nu = true             -- Linenumbers
 vim.opt.relativenumber = true -- Relative Linenumbers
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -38,6 +38,9 @@ vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in 
 vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
-vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
+vim.opt.path:append { '**' }         -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.formatoptions:append { 'r' } -- Add asterisks in block comments
+
+-- For Rainbow braces
+vim.g.rainbow_active = 1

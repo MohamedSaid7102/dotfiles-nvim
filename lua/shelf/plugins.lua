@@ -115,9 +115,6 @@ packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'     -- nvim-cmp source for luasnip snippets
   use 'rafamadriz/friendly-snippets' -- Snippets'
 
-  -- live server: https://github.com/manzeloth/live-server
-  use 'manzeloth/live-server'
-
   -- quacker like!, codei.vim: https://github.com/metakirby5/codi.vim
   use 'metakirby5/codi.vim'
 
@@ -162,14 +159,23 @@ packer.startup(function(use)
   -- Smooth scrolling
   use 'karb94/neoscroll.nvim'
 
+  -- Color pairs: https://github.com/luochen1990/rainbow
+  use 'luochen1990/rainbow'
+
   -- Dart & Flutter setup start
   -- https://x-team.com/blog/neovim-flutter/
   use 'dart-lang/dart-vim-plugin'
   use 'thosakwe/vim-flutter'
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+  }
   use 'natebosch/vim-lsc'
   use 'natebosch/vim-lsc-dart'
-  use 'natebosch/dartlang-snippets'
-
+  -- use 'natebosch/dartlang-snippets'
 
   -- Telescope simulators: https://github.com/dimaportenko/telescope-simulators.nvim
   use "dimaportenko/telescope-simulators.nvim"

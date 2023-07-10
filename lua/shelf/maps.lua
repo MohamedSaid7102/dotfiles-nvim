@@ -27,8 +27,13 @@ vim.keymap.set("n", "s", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 function FormatCode()
-  vim.lsp.buf.execute_command({ command = "textDocument/formatting", arguments = { vim.uri_from_bufnr(0) } })
-  vim.cmd(':Prettier')
+  local file_extension = vim.fn.expand('%:e')
+
+  if file_extension == 'dart' then
+    vim.cmd(':DartFmt')
+  else
+    vim.lsp.buf.execute_command({ command = "textDocument/formatting", arguments = { vim.uri_from_bufnr(0) } })
+  end
 end
 
 vim.keymap.set("n", "<leader>f", FormatCode, { silent = true })
