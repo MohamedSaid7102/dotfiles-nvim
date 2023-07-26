@@ -145,10 +145,10 @@ vim.keymap.set('', '<C-j>', '<C-w>j')
 vim.keymap.set('', '<C-l>', '<C-w>l')
 
 -- Resize window
-vim.keymap.set('n', '<C-left>', '<C-w>5>')
-vim.keymap.set('n', '<C-right>', '<C-w>5<')
-vim.keymap.set('n', '<C-up>', '<C-w>5+')
-vim.keymap.set('n', '<C-down>', '<C-w>5-')
+vim.keymap.set('n', '<C-A-h>', '<C-w>5>')
+vim.keymap.set('n', '<C-A-l>', '<C-w>5<')
+vim.keymap.set('n', '<C-A-k>', '<C-w>5+')
+vim.keymap.set('n', '<C-A-j>', '<C-w>5-')
 
 
 -- Word wrap toggle

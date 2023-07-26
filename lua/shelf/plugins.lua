@@ -9,10 +9,18 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Theme | You can pick any one you want
+  -- To re-enable this theme, uncomment following & go to neosolarized.rc.lua file in after/ and uncomment it
+  --
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
+  --
+  -- Option 2
+  -- https://github.com/catppuccin/nvim
+  --
+  -- To re-enable this theme, uncomment following & go to catppuccin.rc.lua file in after/ and uncomment it
+  -- use { "catppuccin/nvim", as = "catppuccin" }
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim'     -- Common utilities
