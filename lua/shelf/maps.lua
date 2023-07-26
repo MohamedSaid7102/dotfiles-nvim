@@ -24,7 +24,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "s", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 function FormatCode()
   local file_extension = vim.fn.expand('%:e')
@@ -32,11 +32,12 @@ function FormatCode()
   if file_extension == 'dart' then
     vim.cmd(':DartFmt')
   else
-    vim.lsp.buf.execute_command({ command = "textDocument/formatting", arguments = { vim.uri_from_bufnr(0) } })
+    vim.cmd(':lua vim.lsp.buf.format()')
   end
 end
 
 vim.keymap.set("n", "<leader>f", FormatCode, { silent = true })
+-- Autoformat for these files
 vim.cmd('autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx lua FormatCode()')
 
 -- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)                                     -- Format code

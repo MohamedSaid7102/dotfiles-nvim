@@ -180,6 +180,10 @@ packer.startup(function(use)
   -- Telescope simulators: https://github.com/dimaportenko/telescope-simulators.nvim
   use "dimaportenko/telescope-simulators.nvim"
 
+  -- Lint react
+
+  use 'yannickcr/eslint-plugin-react'
+
   -- Dart & Flutter setup end
 
   -- Auto close tag

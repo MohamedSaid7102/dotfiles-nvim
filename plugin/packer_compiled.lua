@@ -85,7 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/gregsexton/MatchTag"
   },
   ["auto-save.nvim"] = {
-    config = { "\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\19debounce_delay\3ô\3\22write_all_buffers\2\fenabled\2\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0" },
+    config = { "\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\22write_all_buffers\2\fenabled\2\19debounce_delay\3ô\3\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0" },
     loaded = true,
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
@@ -134,6 +134,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/shelf/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
+  },
+  ["eslint-plugin-react"] = {
+    loaded = true,
+    path = "/home/shelf/.local/share/nvim/site/pack/packer/start/eslint-plugin-react",
+    url = "https://github.com/yannickcr/eslint-plugin-react"
   },
   ["flutter-tools.nvim"] = {
     loaded = true,
@@ -373,18 +378,11 @@ try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B
 time([[Config for zen-mode.nvim]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
-try_loadstring("\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\19debounce_delay\3ô\3\22write_all_buffers\2\fenabled\2\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
+try_loadstring("\27LJ\2\n“\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\19trigger_events\1\0\3\22write_all_buffers\2\fenabled\2\19debounce_delay\3ô\3\1\2\0\0\16InsertLeave\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
 time([[Config for auto-save.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'Prettier', function(cmdargs)
-          require('packer.load')({'vim-prettier'}, { cmd = 'Prettier', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-prettier'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Prettier ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'PrettierAsync', function(cmdargs)
           require('packer.load')({'vim-prettier'}, { cmd = 'PrettierAsync', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -392,15 +390,19 @@ pcall(vim.api.nvim_create_user_command, 'PrettierAsync', function(cmdargs)
           require('packer.load')({'vim-prettier'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('PrettierAsync ', 'cmdline')
       end})
+pcall(vim.api.nvim_create_user_command, 'Prettier', function(cmdargs)
+          require('packer.load')({'vim-prettier'}, { cmd = 'Prettier', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-prettier'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Prettier ', 'cmdline')
+      end})
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType svelte ++once lua require("packer.load")({'vim-prettier'}, { ft = "svelte" }, _G.packer_plugins)]]
-vim.cmd [[au FileType mdx ++once lua require("packer.load")({'vim-prettier'}, { ft = "mdx" }, _G.packer_plugins)]]
-vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-prettier'}, { ft = "json" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-prettier'}, { ft = "javascript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType typescript ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType css ++once lua require("packer.load")({'vim-prettier'}, { ft = "css" }, _G.packer_plugins)]]
@@ -411,6 +413,9 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-prettier'
 vim.cmd [[au FileType vue ++once lua require("packer.load")({'vim-prettier'}, { ft = "vue" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html ++once lua require("packer.load")({'vim-prettier'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType yaml ++once lua require("packer.load")({'vim-prettier'}, { ft = "yaml" }, _G.packer_plugins)]]
+vim.cmd [[au FileType svelte ++once lua require("packer.load")({'vim-prettier'}, { ft = "svelte" }, _G.packer_plugins)]]
+vim.cmd [[au FileType mdx ++once lua require("packer.load")({'vim-prettier'}, { ft = "mdx" }, _G.packer_plugins)]]
+vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-prettier'}, { ft = "json" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
