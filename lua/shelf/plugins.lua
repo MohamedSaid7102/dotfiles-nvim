@@ -37,7 +37,7 @@ packer.startup(function(use)
     "prettier/vim-prettier",
     run = "npm install",
     ft = { "javascript", "typescript", "json", "css", "scss", "less", "graphql", "markdown", "vue", "html", "yaml",
-      "svelte", "mdx" },
+      "svelte", "mdx", "jsx", "tsx" },
     cmd = { "Prettier", "PrettierAsync" },
   }
 
@@ -188,9 +188,30 @@ packer.startup(function(use)
   -- Telescope simulators: https://github.com/dimaportenko/telescope-simulators.nvim
   use "dimaportenko/telescope-simulators.nvim"
 
-  -- Lint react
+  -- Github branches view: https://github.com/rbong/vim-flog
+  use 'rbong/vim-flog'
 
-  use 'yannickcr/eslint-plugin-react'
+  -- Floaterm: https://github.com/voldikss/vim-floaterm
+  -- Inegrate any terminal program into neovim
+  use 'voldikss/vim-floaterm'
+
+
+  -- Bootstrap completion
+  use 'Jezda1337/cmp_bootstrap'
+
+  use {
+    "Jezda1337/nvim-html-css",
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-lua/plenary.nvim",
+    },
+  }
+
+  -- -- ChatGPT
+  -- use({
+  --   'terror/chatgpt.nvim',
+  --   run = 'pip3 install -r requirements.txt'
+  -- })
 
   -- Dart & Flutter setup end
 

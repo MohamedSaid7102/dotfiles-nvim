@@ -45,3 +45,7 @@ vim.opt.formatoptions:append { 'r' } -- Add asterisks in block comments
 
 -- For Rainbow braces
 vim.g.rainbow_active = 1
+
+-- Floaterm
+vim.g.floaterm_width = 0.95
+vim.g.floaterm_height = 0.95

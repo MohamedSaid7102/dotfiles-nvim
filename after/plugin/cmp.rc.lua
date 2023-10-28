@@ -39,22 +39,58 @@ cmp.setup({
       select = true
     }),
   }),
+
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+
+    { name = 'bootstrap' },
+    { name = 'html-css' },
+
   }, {
     { name = 'buffer' },
   }),
+
   formatting = {
     format = lspkind.cmp_format({
       maxwidth = 50,
       before = function(entry, vim_item)
+        if entry.source.name == "html-css" then
+          vim_item.menu = entry.completion_item.menu
+        end
+
         vim_item = formatForTailwindCSS(entry, vim_item)
         return vim_item
       end
     })
+  },
+
+  option = {
+    enable_on = {
+      "html",
+      "jsx",
+      "tsx"
+    },                                           -- set the file types you want the plugin to work on
+    file_extensions = { "css", "sass", "less" }, -- set the local filetypes from which you want to derive classes
+    style_sheets = {
+      -- example of remote styles, only css no js for now
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+      "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css",
+    }
   }
+
 })
+
+
+require("bootstrap-cmp.config").setup({
+  file_types = { -- Specify the file types where you want to use this completion
+    "html",
+    "javascript",
+    "css",
+  },
+  url = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css", -- Set your Bootstrap URL or CDN link here
+})
+
 
 vim.cmd [[
   set completeopt=menuone,noinsert,noselect

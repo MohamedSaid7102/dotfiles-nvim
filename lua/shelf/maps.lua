@@ -172,6 +172,9 @@ vim.keymap.set('v', '-', '\"+ygvd<esc>i--<esc>P')
 vim.keymap.set('v', '+', '\"+ygvd<esc>i++<esc>P')
 vim.keymap.set('v', '/', '\"+ygvd<esc>i//<esc>P')
 
+-- Floaterm
+vim.keymap.set('n', '<leader>lg', ':FloatermNew lazygit<CR>')
+
 
 
 -- You will find another maps in lua/lsp*
